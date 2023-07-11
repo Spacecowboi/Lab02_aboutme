@@ -9,22 +9,24 @@ greetUser();
 
 function fixInput(input) {
 
-  return input.toLowerCase();
+  input = input.toLowerCase();
+
+  return input;
 }
 
 // Validating yes or no
-function validaton(response) {
+function validaton(response, answer) {
 
   response = fixInput(response);
-  return response === 'yes' || response === 'no';
+  return response === answer;
 }
 
 // prompt then validate the user responses
-function askQuestion(question){
+function askQuestion(question, answer){
 
   let response = prompt(question);
 
-  if (validaton(response)){
+  if (validaton(response, answer)){
     //console.log(response);
     alert('Awesome!');
   } else {
@@ -33,8 +35,8 @@ function askQuestion(question){
   }
 }
 
-askQuestion('First question: Do you like anime?' );
-askQuestion('Second question: Have you ever traveled?');
-askQuestion('Third question: Do you like video games?');
-askQuestion('Fourth question: Have you ever run a marathon');
-askQuestion('Fifth question: Do you enjoy cannabis?');
+askQuestion('First question: Do you like anime?', 'yes' );
+askQuestion('Second question: Have you ever traveled?', 'yes');
+askQuestion('Third question: Do you like video games?', 'yes');
+askQuestion('Fourth question: Have you ever run a marathon', 'yes');
+askQuestion('Fifth question: Do you enjoy cannabis?', 'yes');
