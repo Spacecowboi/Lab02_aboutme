@@ -45,10 +45,10 @@ askQuestion('Fifth question: Do you enjoy cannabis?', 'yes');
 
 function guessaNumber(){
 
-  let attempts = 4;
+  let maxAttempts = 4;
   let rightAnswer = 42;
 
-  while (attempts > 0) {
+  for(let attempts = 1; attempts <=maxAttempts; attempts++) {
     let guess = +prompt('Time for some numbers! Guess a number (between 1 and 100):');
 
     if (Number.isInteger(guess) && guess >=1 && guess <= 100){
