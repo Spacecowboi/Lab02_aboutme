@@ -1,8 +1,11 @@
 'use strict';
 
+let score = 0;
+let totalQuestions = 7;
+
 function greetUser(){
   let name = prompt('What is your name?');
-  alert('Welcome to the site, ' + name + '!');
+  alert('Welcome to my page, ' + name + '! You are about to be asked ' + totalQuestions + 'questions.');
 }
 
 greetUser();
@@ -21,6 +24,7 @@ function validaton(response, answer) {
   return response === answer;
 }
 
+
 // prompt then validate the user responses
 function askQuestion(question, answer){
 
@@ -29,6 +33,7 @@ function askQuestion(question, answer){
   if (validaton(response, answer)){
     //console.log(response);
     alert('Awesome!');
+    score ++;
   } else {
     //console.log(response);
     alert('Oof size large m8');
@@ -63,6 +68,8 @@ function guessaNumber(){
 
         alert('You got it!'); // OTHERWISE, let them know they figured it out, as long as they guessed the right number
 
+        score++;
+
         return;
       }
     } else {
@@ -74,3 +81,45 @@ function guessaNumber(){
 }
 
 guessaNumber();
+
+
+// Question 7
+// Reqs: - Multiple correct answers stored in an array, - User has 6 attempts to guess right answer
+// - Guesses end once a user guesses correcet answer, - Display all possible answers, - Use a loop. Maybe.
+function questionSeven(){
+
+  let finalQuestion = prompt('And now for the FINAL question, what is my favorite manga?');
+
+  const answers = ['berserk', 'cowboy bebop', 'samurai champloo', 'vinland saga', 'chainsaw man'];
+
+  let attempts = 6;
+
+
+  //Multiple attempt loop
+
+  for(let i = 1; i <= attempts; i++) {
+    if (answers.includes(finalQuestion.toLocaleLowerCase())) {
+      console.log('WOOOO YOU GOT IT!');
+      score++;
+      break;
+
+    } else {
+      console.log('Wrongo chief, have another go.');
+      console.log('Attempts remaining: ' + (attempts - i));
+      finalQuestion = prompt('Try again, What is my FAVORITE manga?');
+    }
+  }
+  //Display correct answers
+  let possibleAnswers = '';
+  for(let j = 0; j < answers.length; j++){
+    possibleAnswers += answers[j];
+    if(j !== answers.length - 1) {
+      possibleAnswers += ', ';
+    }
+  }
+  alert('The correct answers are: ' + possibleAnswers);
+}
+
+questionSeven();
+
+alert('You got ' + score + ' correct answers out of ' + totalQuestions + 'questions, good job!');
