@@ -1,5 +1,5 @@
 'use strict';
-
+// Variable placement and score modifier courtesy of Charles! 
 let score = 0;
 let totalQuestions = 7;
 
