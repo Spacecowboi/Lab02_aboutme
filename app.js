@@ -48,29 +48,29 @@ function guessaNumber(){
   let maxAttempts = 4;
   let rightAnswer = 42;
 
-  for(let attempts = 1; attempts <=maxAttempts; attempts++) {
+  for(let attempts = 1; attempts <=maxAttempts; attempts++) { //using a for loop to cycle through 4 attempts
     let guess = +prompt('Time for some numbers! Guess a number (between 1 and 100):');
 
-    if (Number.isInteger(guess) && guess >=1 && guess <= 100){
-      if (guess > rightAnswer){
+    if (Number.isInteger(guess) && guess >=1 && guess <= 100){ // if the input is a string, convert it to a number and check to see if it is 1-100
+      if (guess > rightAnswer){ // if the guess is higher than the rightAnswer, give an alert that says it is too high
         alert('A little too high!');
 
-      } else if (guess < rightAnswer){
+      } else if (guess < rightAnswer){ // if the guess is lower than the rightAnswer, give an alert that lets them know it is too low
 
         alert ('Too low!');
 
       } else {
 
-        alert('You got it!');
+        alert('You got it!'); // OTHERWISE, let them know they figured it out, as long as they guessed the right number
 
         return;
       }
     } else {
 
-      alert('Please enter a real number.');
+      alert('Please enter a real number.'); // anything other than 1-100 will generate an alert asking to provide a real number
     }
   }
-  alert('You gave it all you had. The correct answer is ' + rightAnswer + '.');
+  alert('You gave it all you had. The correct answer is ' + rightAnswer + '.'); // If all attempts have been exhausted, give them a little pick me up and then give the right answer
 }
 
 guessaNumber();
