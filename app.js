@@ -48,10 +48,20 @@ askQuestion('Fifth question: Do you enjoy cannabis?', 'yes');
 
 //Adding guessing game question for question 6
 
+function getRandomNumber() {
+  let newRandomNumber = 0;
+
+  newRandomNumber = Math.floor(Math.random() * 100) + 1;
+  return newRandomNumber;
+}
+
+
+
 function guessaNumber(){
 
   let maxAttempts = 4;
-  let rightAnswer = 42;
+  // let rightAnswer = 42;
+  let rightAnswer = getRandomNumber();
 
   for(let attempts = 1; attempts <=maxAttempts; attempts++) { //using a for loop to cycle through 4 attempts
     let guess = +prompt('Time for some numbers! Guess a number (between 1 and 100):');
