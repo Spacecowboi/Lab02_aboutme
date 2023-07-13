@@ -122,4 +122,4 @@ function questionSeven(){
 
 questionSeven();
 
-alert('You got ' + score + ' correct answers out of ' + totalQuestions + 'questions, good job!');
+alert('You got ' + score + ' correct answers out of ' + totalQuestions + ' questions, good job!');
